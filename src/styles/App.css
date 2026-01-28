@@ -1,0 +1,9 @@
+.app {
+  min-height: 100vh;
+  background-color: #ebecf0;
+  padding: 32px;
+}
+
+.left-side {
+  overflow-y: auto;
+}
