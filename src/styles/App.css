@@ -1,9 +1,13 @@
 .app {
   min-height: 100vh;
   background-color: #ebecf0;
+  display: flex;
   padding: 32px;
 }
 
 .left-side {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 45%;
 }

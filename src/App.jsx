@@ -7,6 +7,7 @@ export default function App() {
       <div className="left-side">
         <GeneralInfo />
       </div>
+      <div className="right-side"></div>
     </div>
   );
 }
