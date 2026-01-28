@@ -1,4 +1,4 @@
-import { use, useState } from 'react';
+import { useState } from 'react';
 import '../styles/GeneralInfo.css';
 
 export default function GeneralInfo() {
@@ -8,12 +8,12 @@ export default function GeneralInfo() {
   const [phone, setPhone] = useState('');
 
   return (
-    <>
+    <div className="general-container">
       <div className="general-heading">
         <h1>CV Builder</h1>
         <p>Fill out the sections below to create your professional CV</p>
       </div>
-      <form className={`generalContainer ${isActive ? '' : 'inactive'}`}>
+      <form className={`formContainer ${isActive ? '' : 'inactive'}`}>
         <h1>General Information</h1>
         <div>
           <label htmlFor="name-input">Name</label>
@@ -74,6 +74,6 @@ export default function GeneralInfo() {
           </button>
         )}
       </form>
-    </>
+    </div>
   );
 }
