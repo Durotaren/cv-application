@@ -12,6 +12,14 @@ export default function App() {
     phone: '',
   });
 
+  const [educationalInfo, setEducationalInfo] = useState({
+    isActive: true,
+    name: '',
+    title: '',
+    startingDate: '',
+    endingDate: '',
+  });
+
   return (
     <div className="app">
       <div className="left-side">
@@ -19,7 +27,10 @@ export default function App() {
           generalInfo={generalInfo}
           setGeneralInfo={setGeneralInfo}
         />
-        <EducationalInfo />
+        <EducationalInfo
+          educationalInfo={educationalInfo}
+          setEducationalInfo={setEducationalInfo}
+        />
         <PracticalExperience />
       </div>
       <div className="right-side"></div>
