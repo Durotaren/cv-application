@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import '../styles/GeneralInfo.css';
 
-export default function GeneralInfo() {
-  const [isActive, setIsActive] = useState(true);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
+  const { isActive, name, email, phone } = generalInfo;
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setGeneralInfo((prev) => ({ ...prev, [name]: value }));
+  }
 
   return (
     <div className="general-container">
@@ -13,42 +16,42 @@ export default function GeneralInfo() {
         <h1>CV Builder</h1>
         <p>Fill out the sections below to create your professional CV</p>
       </div>
-      <form className={`formContainer ${isActive ? '' : 'inactive'}`}>
+      <form className={`formContainer ${!isActive && 'inactive'}`}>
         <h1>General Information</h1>
         <div>
           <label htmlFor="name-input">Name</label>
           <input
+            name="name"
             type="text"
             value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+            onChange={handleChange}
             id="name-input"
             disabled={!isActive}
+            required
           />
         </div>
         <div>
           <label htmlFor="email-input">Email</label>
           <input
+            name="email"
             type="email"
             value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            onChange={handleChange}
             id="email-input"
             disabled={!isActive}
+            required
           />
         </div>
         <div>
           <label htmlFor="phone-input">Phone Number</label>
           <input
+            name="phone"
             type="tel"
             value={phone}
-            onChange={(e) => {
-              setPhone(e.target.value);
-            }}
+            onChange={handleChange}
             id="phone-input"
             disabled={!isActive}
+            required
           />
         </div>
         {isActive ? (
@@ -57,7 +60,7 @@ export default function GeneralInfo() {
             type="submit"
             onClick={(e) => {
               e.preventDefault();
-              setIsActive(false);
+              setGeneralInfo((prev) => ({ ...prev, isActive: false }));
             }}
           >
             Submit
@@ -67,7 +70,7 @@ export default function GeneralInfo() {
             className="edit-btn"
             onClick={(e) => {
               e.preventDefault();
-              setIsActive(true);
+              setGeneralInfo((prev) => ({ ...prev, isActive: true }));
             }}
           >
             Edit

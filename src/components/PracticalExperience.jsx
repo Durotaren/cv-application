@@ -1,65 +1,78 @@
 import { useState } from 'react';
-import '../styles/EducationalInfo.css';
+import '../styles/PracticalExperience.css';
 
-export default function EducationalInfo() {
+export default function PracticalExperience() {
   const [isActive, setIsActive] = useState(true);
   const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
+  const [position, setPosition] = useState('');
+  const [responsibilities, setResponsibilities] = useState('');
   const [startingDate, setStartingDate] = useState('');
   const [endingDate, setEndingDate] = useState('');
 
   return (
-    <form className={`educational-container ${!isActive && 'inactive'}`}>
-      <h1>Educational Experience</h1>
+    <form className={`practical-container ${!isActive && 'inactive'}`}>
+      <h1>Practical Experience</h1>
       <div>
-        <label htmlFor="school-input">School Name</label>
+        <label htmlFor="company-input">Company Name</label>
         <input
           type="text"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
-          id="school-input"
+          id="company-input"
           disabled={!isActive}
         />
       </div>
       <div>
-        <label htmlFor="title-input">Title of Study</label>
+        <label htmlFor="position-input">Position Title</label>
         <input
           type="text"
-          value={title}
+          value={position}
           onChange={(e) => {
-            setTitle(e.target.value);
+            setPosition(e.target.value);
           }}
-          id="title-input"
+          id="position-input"
           disabled={!isActive}
         />
       </div>
-      <div className="education-dates">
+      <div>
+        <label htmlFor="responsibilities-input">Main Responsibilities</label>
+        <input
+          type="text"
+          value={responsibilities}
+          onChange={(e) => {
+            setResponsibilities(e.target.value);
+          }}
+          id="responsibilities-input"
+          disabled={!isActive}
+        />
+      </div>
+      <div className="employment-dates">
         <div>
-          <label htmlFor="school-date-start">Date of Study</label>
+          <label htmlFor="employment-date-start">Date From</label>
           <input
-            placeholder="e.g., 2015"
+            placeholder="e.g., Jan 2020"
             type="number"
             value={startingDate}
             onChange={(e) => {
               setStartingDate(e.target.value);
             }}
-            id="school-date-start"
+            id="employment-date-start"
             disabled={!isActive}
             maxLength={4}
           />
         </div>
         <div>
-          <label htmlFor="school-date-end">Date of Study</label>
+          <label htmlFor="employment-date-end">Date Until</label>
           <input
-            placeholder="e.g., 2019"
+            placeholder="e.g., Present"
             type="number"
             value={endingDate}
             onChange={(e) => {
               setEndingDate(e.target.value);
             }}
-            id="school-date-end"
+            id="employment-date-end"
             disabled={!isActive}
             maxLength={4}
           />

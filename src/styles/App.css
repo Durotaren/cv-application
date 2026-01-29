@@ -2,13 +2,13 @@
   min-height: 100vh;
   background-color: #ebecf0;
   display: flex;
-  padding: 32px;
+  padding: 2vw 4vw;
 }
 
 .left-side {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  max-width: 45%;
+  max-width: 40%;
   flex: 1;
 }
