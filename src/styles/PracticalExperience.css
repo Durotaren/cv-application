@@ -9,7 +9,8 @@ form {
 
 label,
 input,
-h1 {
+h1,
+textarea {
   color: oklch(0.145 0 0);
 }
 
@@ -25,7 +26,8 @@ form > div {
   margin-bottom: 16px;
 }
 
-input {
+input,
+textarea {
   background-color: #f3f3f5;
   width: 100%;
   padding: 8px 16px;
@@ -66,6 +68,6 @@ h1 {
   flex: 1;
 }
 
-#responsibilities-input {
-  height: 96px;
+textarea {
+  resize: none;
 }

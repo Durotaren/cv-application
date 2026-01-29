@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import '../styles/EducationalInfo.css';
 
 export default function EducationalInfo({
   educationalInfo,
   setEducationalInfo,
 }) {
-  const { isActive, name, title, startingDate, endingDate } = educationalInfo;
+  const { isActive, companyName, title, startingDate, endingDate } =
+    educationalInfo;
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -18,9 +18,9 @@ export default function EducationalInfo({
       <div>
         <label htmlFor="school-input">School Name</label>
         <input
-          name="name"
+          name="companyName"
           type="text"
-          value={name}
+          value={companyName}
           onChange={handleChange}
           id="school-input"
           disabled={!isActive}

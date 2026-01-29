@@ -1,13 +1,23 @@
-import { useState } from 'react';
 import '../styles/PracticalExperience.css';
 
-export default function PracticalExperience() {
-  const [isActive, setIsActive] = useState(true);
-  const [name, setName] = useState('');
-  const [position, setPosition] = useState('');
-  const [responsibilities, setResponsibilities] = useState('');
-  const [startingDate, setStartingDate] = useState('');
-  const [endingDate, setEndingDate] = useState('');
+export default function PracticalExperience({
+  practicalExperience,
+  setPracticalExperience,
+}) {
+  const {
+    isActive,
+    namePractical,
+    position,
+    responsibilities,
+    startingDatePractical,
+    endingDatePractical,
+  } = practicalExperience;
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setPracticalExperience((prev) => ({ ...prev, [name]: value }));
+  }
 
   return (
     <form className={`practical-container ${!isActive && 'inactive'}`}>
@@ -15,11 +25,10 @@ export default function PracticalExperience() {
       <div>
         <label htmlFor="company-input">Company Name</label>
         <input
+          name="namePractical"
           type="text"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
+          value={namePractical}
+          onChange={handleChange}
           id="company-input"
           disabled={!isActive}
         />
@@ -27,23 +36,21 @@ export default function PracticalExperience() {
       <div>
         <label htmlFor="position-input">Position Title</label>
         <input
+          name="position"
           type="text"
           value={position}
-          onChange={(e) => {
-            setPosition(e.target.value);
-          }}
+          onChange={handleChange}
           id="position-input"
           disabled={!isActive}
         />
       </div>
       <div>
         <label htmlFor="responsibilities-input">Main Responsibilities</label>
-        <input
+        <textarea
+          name="responsibilities"
           type="text"
           value={responsibilities}
-          onChange={(e) => {
-            setResponsibilities(e.target.value);
-          }}
+          onChange={handleChange}
           id="responsibilities-input"
           disabled={!isActive}
         />
@@ -52,12 +59,11 @@ export default function PracticalExperience() {
         <div>
           <label htmlFor="employment-date-start">Date From</label>
           <input
+            name="startingDatePractical"
             placeholder="e.g., Jan 2020"
             type="number"
-            value={startingDate}
-            onChange={(e) => {
-              setStartingDate(e.target.value);
-            }}
+            value={startingDatePractical}
+            onChange={handleChange}
             id="employment-date-start"
             disabled={!isActive}
             maxLength={4}
@@ -66,12 +72,11 @@ export default function PracticalExperience() {
         <div>
           <label htmlFor="employment-date-end">Date Until</label>
           <input
+            name="endingDatePractical"
             placeholder="e.g., Present"
             type="number"
-            value={endingDate}
-            onChange={(e) => {
-              setEndingDate(e.target.value);
-            }}
+            value={endingDatePractical}
+            onChange={handleChange}
             id="employment-date-end"
             disabled={!isActive}
             maxLength={4}
@@ -84,7 +89,7 @@ export default function PracticalExperience() {
           type="submit"
           onClick={(e) => {
             e.preventDefault();
-            setIsActive(false);
+            setPracticalExperience((prev) => ({ ...prev, isAcitve: false }));
           }}
         >
           Submit
@@ -94,7 +99,7 @@ export default function PracticalExperience() {
           className="edit-btn"
           onClick={(e) => {
             e.preventDefault();
-            setIsActive(true);
+            setPracticalExperience((prev) => ({ ...prev, isAcitve: false }));
           }}
         >
           Edit

@@ -3,6 +3,7 @@ import './styles/App.css';
 import GeneralInfo from './components/GeneralInfo';
 import EducationalInfo from './components/EducationalInfo';
 import PracticalExperience from './components/PracticalExperience';
+import CvOutput from './components/CvOutput';
 
 export default function App() {
   const [generalInfo, setGeneralInfo] = useState({
@@ -14,10 +15,19 @@ export default function App() {
 
   const [educationalInfo, setEducationalInfo] = useState({
     isActive: true,
-    name: '',
+    companyName: '',
     title: '',
     startingDate: '',
     endingDate: '',
+  });
+
+  const [practicalExperience, setPracticalExperience] = useState({
+    isActive: true,
+    namePractical: '',
+    position: '',
+    responsibilities: '',
+    startingDatePractical: '',
+    endingDatePractical: '',
   });
 
   return (
@@ -31,9 +41,18 @@ export default function App() {
           educationalInfo={educationalInfo}
           setEducationalInfo={setEducationalInfo}
         />
-        <PracticalExperience />
+        <PracticalExperience
+          practicalExperience={practicalExperience}
+          setPracticalExperience={setPracticalExperience}
+        />
       </div>
-      <div className="right-side"></div>
+      <div className="right-side">
+        <CvOutput
+          generalInfo={generalInfo}
+          educationalInfo={educationalInfo}
+          practicalExperience={practicalExperience}
+        />
+      </div>
     </div>
   );
 }
