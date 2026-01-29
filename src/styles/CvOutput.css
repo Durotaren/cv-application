@@ -4,6 +4,19 @@
   margin-bottom: 24px;
 }
 
+.preview-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #9bf69d;
+  color: #ffffff;
+  border-radius: 0.625rem;
+  height: 60px;
+  padding: 16px;
+}
+
 .cv-preview {
   background-color: #ffffff;
   border-radius: 0.625rem;
@@ -32,13 +45,28 @@ p {
   gap: 0.5rem;
 }
 
-/* .container {
-  margin-bottom: 8px;
-} */
-
 .line {
   width: 60%;
   height: 2px;
   background-color: black;
   margin: 16px 0;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .cv-preview,
+  .cv-preview * {
+    visibility: visible;
+    border: none;
+  }
+
+  .cv-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }

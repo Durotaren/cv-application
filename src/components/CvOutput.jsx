@@ -16,11 +16,18 @@ export default function CvOutput({
     endingDatePractical,
   } = practicalExperience;
 
+  function printAsPdf() {
+    window.print();
+  }
+
   return (
     <div className="cv-preview-container">
       <div className="preview-heading">
-        <h1>CV Preview</h1>
-        <p>Preview what your CV looks like</p>
+        <div>
+          <h1>CV Preview</h1>
+          <p>Preview what your CV looks like</p>
+        </div>
+        <button onClick={printAsPdf}>Download as PDF</button>
       </div>
       <div className="cv-preview">
         <div className="general-preview container">
@@ -55,7 +62,11 @@ export default function CvOutput({
             </div>
           )}
         </div>
-        {name !== '' && companyName !== '' ? <div className="line"></div> : ''}
+        {companyName !== '' && namePractical !== '' ? (
+          <div className="line"></div>
+        ) : (
+          ''
+        )}
         <div className="practical-preview container">
           <h1>{namePractical}</h1>
           <p>{position}</p>
