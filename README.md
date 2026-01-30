@@ -1,4 +1,4 @@
-# CV Builder
+# NextCV
 
 A React-based CV application that allows users to input their general information, educational experience, and practical work experience, then preview and download a professional CV.
 

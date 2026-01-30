@@ -1,5 +1,6 @@
 import '../styles/CvOutput.css';
 import emailSvg from '../assets/images/email.svg';
+import phoneSvg from '../assets/images/phone.svg';
 
 export default function CvOutput({
   generalInfo,
@@ -44,7 +45,7 @@ export default function CvOutput({
             <p className="general-phone">{phone}</p>
           ) : (
             <div className="holder">
-              <img src={emailSvg} alt="Email Icon" width={24} />
+              <img src={phoneSvg} alt="Phone Icon" width={24} />
               <p className="general-phone">{phone}</p>
             </div>
           )}
