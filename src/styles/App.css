@@ -22,3 +22,19 @@
 .left-side {
   padding: 2vw 4vw;
 }
+
+@media (max-width: 650px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    max-width: 100%;
+  }
+
+  .left-side {
+    overflow: visible;
+    max-height: none;
+  }
+}

@@ -25,7 +25,7 @@ export default function CvOutput({
       <div className="preview-heading">
         <div>
           <h1>CV Preview</h1>
-          <p>Preview what your CV looks like</p>
+          <p className="preview-para">Preview what your CV looks like</p>
         </div>
         <button onClick={printAsPdf}>Download as PDF</button>
       </div>

@@ -9,12 +9,14 @@
   justify-content: space-between;
 }
 
-button {
+.preview-heading button {
   background-color: #9bf69d;
   color: #ffffff;
   border-radius: 0.625rem;
   height: 60px;
   padding: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .cv-preview {
@@ -50,6 +52,21 @@ p {
   height: 2px;
   background-color: black;
   margin: 16px 0;
+}
+
+@media (max-width: 424px) {
+  .preview-heading button {
+    margin-bottom: 16px;
+    max-width: 35vw;
+  }
+  .preview-heading {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p.preview-para {
+    margin-bottom: 8px;
+  }
 }
 
 @media print {
