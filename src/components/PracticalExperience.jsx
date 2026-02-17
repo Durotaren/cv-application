@@ -89,7 +89,7 @@ export default function PracticalExperience({
           type="submit"
           onClick={(e) => {
             e.preventDefault();
-            setPracticalExperience((prev) => ({ ...prev, isAcitve: false }));
+            setPracticalExperience((prev) => ({ ...prev, isActive: false }));
           }}
         >
           Submit
@@ -99,7 +99,7 @@ export default function PracticalExperience({
           className="edit-btn"
           onClick={(e) => {
             e.preventDefault();
-            setPracticalExperience((prev) => ({ ...prev, isAcitve: false }));
+            setPracticalExperience((prev) => ({ ...prev, isActive: true }));
           }}
         >
           Edit
