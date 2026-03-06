@@ -1,9 +1,13 @@
 import '../styles/GeneralInfo.css';
+import { GeneralPropsReceived } from '../types/index';
 
-export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
+export default function GeneralInfo({
+  generalInfo,
+  setGeneralInfo,
+}: GeneralPropsReceived) {
   const { isActive, name, email, phone } = generalInfo;
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
 
     setGeneralInfo((prev) => ({ ...prev, [name]: value }));
