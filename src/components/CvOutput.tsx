@@ -1,4 +1,5 @@
 import '../styles/CvOutput.css';
+import { CvPropsReceived } from '../types';
 import emailSvg from '../assets/images/email.svg';
 import phoneSvg from '../assets/images/phone.svg';
 
@@ -6,7 +7,7 @@ export default function CvOutput({
   generalInfo,
   educationalInfo,
   practicalExperience,
-}) {
+}: CvPropsReceived) {
   const { name, email, phone } = generalInfo;
   const { companyName, title, startingDate, endingDate } = educationalInfo;
   const {

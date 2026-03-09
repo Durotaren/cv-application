@@ -38,8 +38,15 @@ interface PracticalPropsReceived {
   setPracticalExperience: React.Dispatch<React.SetStateAction<PracticalProps>>;
 }
 
+interface CvPropsReceived {
+  generalInfo: GeneralProps;
+  educationalInfo: EducationalProps;
+  practicalExperience: PracticalProps;
+}
+
 export {
   GeneralPropsReceived,
   EducationalPropsReceived,
   PracticalPropsReceived,
+  CvPropsReceived,
 };
