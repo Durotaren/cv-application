@@ -1,13 +1,14 @@
 import '../styles/EducationalInfo.css';
+import { EducationalPropsReceived } from '../types';
 
 export default function EducationalInfo({
   educationalInfo,
   setEducationalInfo,
-}) {
+}: EducationalPropsReceived) {
   const { isActive, companyName, title, startingDate, endingDate } =
     educationalInfo;
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
 
     setEducationalInfo((prev) => ({ ...prev, [name]: value }));

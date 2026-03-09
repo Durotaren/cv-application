@@ -13,4 +13,16 @@ type GeneralPropsReceived = {
   setGeneralInfo: React.Dispatch<React.SetStateAction<GeneralProps>>;
 };
 
-export { GeneralPropsReceived };
+type EducationalProps = BaseProps & {
+  companyName: string;
+  title: string;
+  startingDate: string;
+  endingDate: string;
+};
+
+type EducationalPropsReceived = {
+  educationalInfo: EducationalProps;
+  setEducationalInfo: React.Dispatch<React.SetStateAction<EducationalProps>>;
+};
+
+export { GeneralPropsReceived, EducationalPropsReceived };
