@@ -4,16 +4,17 @@ import GeneralInfo from './components/GeneralInfo';
 import EducationalInfo from './components/EducationalInfo';
 import PracticalExperience from './components/PracticalExperience';
 import CvOutput from './components/CvOutput';
+import { GeneralProps, EducationalProps, PracticalProps } from './types';
 
 export default function App() {
-  const [generalInfo, setGeneralInfo] = useState({
+  const [generalInfo, setGeneralInfo] = useState<GeneralProps>({
     isActive: true,
     name: '',
     email: '',
     phone: '',
   });
 
-  const [educationalInfo, setEducationalInfo] = useState({
+  const [educationalInfo, setEducationalInfo] = useState<EducationalProps>({
     isActive: true,
     companyName: '',
     title: '',
@@ -21,14 +22,15 @@ export default function App() {
     endingDate: '',
   });
 
-  const [practicalExperience, setPracticalExperience] = useState({
-    isActive: true,
-    namePractical: '',
-    position: '',
-    responsibilities: '',
-    startingDatePractical: '',
-    endingDatePractical: '',
-  });
+  const [practicalExperience, setPracticalExperience] =
+    useState<PracticalProps>({
+      isActive: true,
+      namePractical: '',
+      position: '',
+      responsibilities: '',
+      startingDatePractical: '',
+      endingDatePractical: '',
+    });
 
   return (
     <div className="app">

@@ -45,6 +45,9 @@ interface CvPropsReceived {
 }
 
 export {
+  GeneralProps,
+  EducationalProps,
+  PracticalProps,
   GeneralPropsReceived,
   EducationalPropsReceived,
   PracticalPropsReceived,
