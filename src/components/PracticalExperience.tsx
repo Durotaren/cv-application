@@ -1,9 +1,10 @@
 import '../styles/PracticalExperience.css';
+import { PracticalPropsReceived } from '../types';
 
 export default function PracticalExperience({
   practicalExperience,
   setPracticalExperience,
-}) {
+}: PracticalPropsReceived) {
   const {
     isActive,
     namePractical,
@@ -13,7 +14,11 @@ export default function PracticalExperience({
     endingDatePractical,
   } = practicalExperience;
 
-  function handleChange(e) {
+  function handleChange(
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
+  ) {
     const { name, value } = e.target;
 
     setPracticalExperience((prev) => ({ ...prev, [name]: value }));
@@ -48,7 +53,6 @@ export default function PracticalExperience({
         <label htmlFor="responsibilities-input">Main Responsibilities</label>
         <textarea
           name="responsibilities"
-          type="text"
           value={responsibilities}
           onChange={handleChange}
           id="responsibilities-input"
