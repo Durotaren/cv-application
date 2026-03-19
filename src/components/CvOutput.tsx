@@ -18,7 +18,7 @@ export default function CvOutput({
     endingDatePractical,
   } = practicalExperience;
 
-  function printAsPdf() {
+  function printAsPdf(): void {
     window.print();
   }
 
