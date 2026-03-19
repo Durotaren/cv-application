@@ -8,7 +8,7 @@ export default function EducationalInfo({
   const { isActive, companyName, title, startingDate, endingDate } =
     educationalInfo;
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const { name, value } = e.target;
 
     setEducationalInfo((prev) => ({ ...prev, [name]: value }));
