@@ -18,7 +18,7 @@ export default function PracticalExperience({
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>,
-  ) {
+  ): void {
     const { name, value } = e.target;
 
     setPracticalExperience((prev) => ({ ...prev, [name]: value }));
