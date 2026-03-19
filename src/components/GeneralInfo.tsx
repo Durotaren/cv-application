@@ -7,7 +7,7 @@ export default function GeneralInfo({
 }: GeneralPropsReceived) {
   const { isActive, name, email, phone } = generalInfo;
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const { name, value } = e.target;
 
     setGeneralInfo((prev) => ({ ...prev, [name]: value }));
